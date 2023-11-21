@@ -1,0 +1,24 @@
+<!-- FILEPATH: /Users/aman/Desktop/Fall '23/Crypto/CIS628/frontendApp/src/app/app.component.html -->
+
+<main class="main">
+  <!-- Your existing code here -->
+
+  <input type="file" accept="image/*" (change)="onChange($event)">
+  <!-- <button (click)="handleImageUpload()">Upload</button> -->
+  <button (click)="encDecImage()">Upload</button>
+  <!-- <button (click)="decryptImage()">Decrypt</button> -->
+
+  <div *ngIf="encUrl">
+    <h1> Encrypted Image </h1>
+    <img [src]="encUrl" alt="Encrypted Image" style="height:400px; width:400px"/>
+  </div>
+
+  <div *ngIf="decUrl">
+    <h1> Decrypted Image </h1>
+    <img [src]="decUrl" alt="Encrypted Image" style="height:400px; width:400px"/>
+
+  </div>
+
+</main>
+
+<router-outlet></router-outlet>
