@@ -1,0 +1,4 @@
+numpy
+Image
+flask
+flask_cors

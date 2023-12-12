@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  cis628_backend:
+    platform: linux/arm64/v8
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: cis628_backend
+    tty: true
+    ports:
+      - 5000:5000
+    networks:
+     cis628-10.9.0.0:
+        ipv4_address: 10.9.0.4
+
+  cis628_frontend:
+    build:
+      context: ./frontendApp
+      dockerfile: Dockerfile
+    tty: true
+    ports:
+      - 4200:4200
+    networks:
+      cis628-10.9.0.0:
+        ipv4_address: 10.9.0.5
+
+networks:
+  cis628-10.9.0.0:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.9.0.0/24

@@ -1,6 +1,7 @@
 import math
 import numpy as np
 from PIL import Image
+import os
 # import math
 
 
@@ -44,6 +45,10 @@ def encrypt_to_disk_as_image(encrypted_data):
 
     # Create and save the image
     img = Image.fromarray(img_data, 'L')  # 'L' for grayscale, use 'RGB' for color images
+    
+    if not os.path.exists('./static'):
+        os.makedirs('./static')
+
     img.save('static/encrypted_image.png')  # Save as PNG
 
 # if __name__ == '__main__':

@@ -23,12 +23,12 @@ def imageUpload():
         return 'No selected image file', 400
 
     # Create the "img" folder if it doesn't exist
-    if not os.path.exists('../img'):
-        os.makedirs('../img')
+    if not os.path.exists('./img'):
+        os.makedirs('./img')
 
     # Save the image to the "img" folder
-    image.save(os.path.join('../img', image.filename))
-    path = os.path.join('../img', image.filename)
+    image.save(os.path.join('./img', image.filename))
+    path = os.path.join('./img', image.filename)
 
     return path
 

@@ -23,7 +23,7 @@ export class AppComponent {
       formData.append('image', this.file);
     }
 
-    const request = await fetch("http://127.0.0.1:5000/imageUpload", {
+    const request = await fetch("http://10.9.0.4:5000/imageUpload", {
       method: "POST",
       mode: "cors",
       cache: "no-cache",
@@ -46,7 +46,7 @@ export class AppComponent {
     if (this.file) {
       formData.append('image', this.file);
     }
-    const request = await fetch("http://127.0.0.1:5000/encDecImage", {
+    const request = await fetch("http://10.9.0.4:5000/encDecImage", {
       method: "POST",
       mode: "cors",
       cache: "no-cache",
@@ -62,8 +62,8 @@ export class AppComponent {
     reader.readAsDataURL(response);
     reader.onloadend = () => {
       console.log(reader.result);
-      this.encUrl = "http://127.0.0.1:5000/static/encrypted_image.png";
-      this.decUrl = "http://127.0.0.1:5000/static/decrypted_image.png"
+      this.encUrl = "http://10.9.0.4:5000/static/encrypted_image.png";
+      this.decUrl = "http://10.9.0.4:5000/static/decrypted_image.png"
     };
   }
 
