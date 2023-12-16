@@ -11,7 +11,15 @@ Image Encryption using Elliptic Curve Cryptography
 ## Project Description
 The project aims to encrypt an image using Elliptic Curve Cryptography. The image is first converted into a matrix of pixels. The matrix is then converted into a vector and then the vector is encrypted using ECC. The encrypted vector is then converted back to a matrix and then to an image.
 
-## How to run the project with Docker
+## How to run the project with Docker [Tested for Mac Machines]
+- Install docker-mac-net-connect: This is required to create a network between the docker container and the host machine. This is required to access the application from the host machine.
+    ```
+    # Install via Homebrew
+    $ brew install chipmk/tap/docker-mac-net-connect
+
+    # Run the service and register it to launch at boot
+    $ sudo brew services start chipmk/tap/docker-mac-net-connect
+    ```
 - Clone the repository : https://github.com/amanvelani/CIS628
 - Run the following command to  build the docker container
     ```
